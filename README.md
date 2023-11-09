@@ -26,7 +26,12 @@ for i in range(5):
 print(card)
 root=tk.Tk()
 root.title("BINGO CARD")
-label=tk.Label(roots,text=card)
-label.grid()
-
+root.geometry("600x400")
+for n,i in enumerate(card):
+  for n2,j in enumerate(i):
+    if j=="B" or j=="I" or j=="N" or j=="G" or j=="O":
+      label=tk.Label(root,text=j,height=3,width=9,bg="cyan")
+    else:
+      label=tk.Button(root,text=j,height=3,width=9,bg="lightgreen")
+    label.place(x=n2*100,y=n*80)
 root.mainloop()
